@@ -10,7 +10,7 @@ df = pd.DataFrame(dict_data)
 
 
 
-exam = {
+exam = {+
 
     'test1':[15,16,17],
     'test2':[16,25,15]

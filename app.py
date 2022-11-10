@@ -1,8 +1,12 @@
 from flask import Flask, jsonify
-app = Flask(__name__)  # Flask 객체 생성
 from db import config
-import matplotlib.pyplot as plt
+from routes import main
+
  
+app = Flask(__name__)  # Flask 객체 생성
+
+
+app.register_blueprint(main.main, url_prefix='/main')
 
 
 @app.route('/')
@@ -21,5 +25,6 @@ def get_profile(username):
 
 if __name__ == "__main__":  # 모듈이 실행 됨을 알림
     app.run(debug=True, port=8080) 
+   
     
 
